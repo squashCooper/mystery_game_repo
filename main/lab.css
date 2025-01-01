@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: #1c0111;
+  color: #ff0099;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+span {
+  color: rgb(255, 0, 208);
+}
+
+.button-container button {
+  display: flex;
+  padding: 12px 24px;
+  background-color: rgb(160, 126, 197);
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.button-container {
+  position: fixed;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Make desk image cover the full background */
+.desk_closed {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Keep original positioning for interactive elements */
+.napkin {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 55%;
+  left: 25%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.sheath {
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  top: 55%;
+  left: 70%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.glove {
+  width: 120px;
+  height: 120px;
+  position: fixed;
+  top: 45%;
+  left: 65%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.key {
+  width: 75px;
+  height: 75px;
+  position: fixed;
+  top: 60%;
+  left: 62%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.obituary {
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  top: 40%;
+  left: 45%;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.mute-button {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.red-arrow {
+  display: none;
+  position: fixed;
+  top: 5%;
+  right: 97%;
+  z-index: 9999;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+
+.open-button {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+.open-button button {
+  background-color: yellow;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.fullscreen-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 9999;
+  background-attachment: fixed;
+  background-position: center, center;
+}

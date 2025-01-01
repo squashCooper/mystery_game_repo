@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="UTF-8" content="width=device-width, initial-scale=1.0">
+	<title>Art101-Final</title>
+	<link rel="stylesheet" type="text/css" href="lab.css">
+	<style>
+		.red-arrow {
+			display: none; /* Hide the red arrow by default */
+			position: absolute;
+			top: 5%; /* Adjust as needed */
+			right: 97%; /* Adjust as needed */
+			z-index: 9999;
+		}
+
+
+		.fullscreen-image {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			object-fit: cover;
+			z-index: 9999;
+			background-attachment: fixed;
+			background-position: center, center;
+		}
+
+		
+
+	</style>
+</head>
+
+<body>
+	<audio id="background_music" src="let-the-mystery-unfold-122118.mp3" loop></audio>
+
+	<!--this is where the game goes-->
+
+	<img class="desk_closed" src="deskclosed.png" alt="Desk Closed"> 
+	<img class="napkin" src="desk-img/1_Napkin1.png" alt="Napkins" onclick="changeImage()">
+	<img class="sheath" src="desk-img/2_Sheath1.png" alt="Sheath" onclick="changeImageSheath()">>
+	<img class="glove" src="desk-img/3_Glove.png" alt="Glove" onclick = "changeImageGlove()">
+	
+	<img class="key" src="desk-img/5_Key.png" alt="Key" onclick = "changeImageKey()">
+	<img class="obituary" src="desk-img/4_Obitiary.png" alt="Obituary" onclick = "changeImageObituary()">
+
+	<!--adding audio...-->
+	<script>
+		function changeImage() {
+		  var napkinImg = document.querySelector('.napkin');
+		  napkinImg.src = 'desk-img/1_Napkin1_Black.jpg';
+		  napkinImg.classList.add('fullscreen-image');
+		  showRedArrow(); // Show the red arrow
+		}
+	  
+		function changeImageSheath() {
+		  var sheathImg = document.querySelector('.sheath');
+		  sheathImg.src = 'desk-img/2_Sheath1_Black.jpg';
+		  sheathImg.classList.add('fullscreen-image');
+		  showRedArrow(); // Show the red arrow
+		}
+	  
+		function changeImageGlove() {
+		  var gloveImg = document.querySelector('.glove');
+		  gloveImg.src = 'desk-img/3_Glove_Black.jpg';
+		  gloveImg.classList.add('fullscreen-image');
+		  showRedArrow(); // Show the red arrow
+		}
+	  
+		
+	  
+		function changeImageKey() {
+			var keyImg = document.querySelector('.key');
+			keyImg.src = 'desk-img/5_Key_Black.jpg';
+			keyImg.classList.add('fullscreen-image');
+			showOpenButton(); // Show the "Open" button
+			showRedArrow();
+			}
+
+		function showOpenButton() {
+			var openButton = document.querySelector('.open-button');
+			openButton.style.display = 'block'; // Show the "Open" button
+		}
+
+
+	  
+		function changeImageObituary() {
+			var obituaryImg = document.querySelector('.obituary');
+			obituaryImg.src = 'desk-img/4_Obitiary_Black.jpg';
+			obituaryImg.classList.add('fullscreen-image');
+			
+
+		
+			
+			showRedArrow(); // Show the red arrow
+		}
+
+	  
+		function showRedArrow() {
+		  var redArrow = document.querySelector('.red-arrow');
+		  redArrow.style.display = 'block'; // Show the red arrow
+		}
+	  
+		function toggleMute() {
+		  var button = document.getElementById('mute-img');
+		  var audio = document.getElementById('background_music');
+	  
+		  if (audio.paused) {
+			audio.play(); // Play
+			button.src = 'speaker-xxl.png'; // Change button
+		  } else {
+			audio.pause(); // Pause
+			button.src = 'mute-xxl.png'; // Change the button
+		  }
+		}
+	  
+		function goBackToMain() {
+			window.open('../main/index.html', '_self');
+			
+		}
+
+		function openDrawer(){
+
+			window.location.href = "../desk_open/desk_open.html";
+
+		}
+
+
+
+	  </script>
+	  
+
+	<br>
+	<br>
+
+	<div class="open-button">
+		<button id="openingButton" onclick="openDrawer()">Open</button>
+	</div>
+
+	<div class="red-arrow">
+		<img id="arrow" src="right-arrow.png" onclick="goBackToMain()">
+	  </div>
+	  
+
+	<div class="mute-button">
+		<img id="mute-img" src="mute-xxl.png" onclick="toggleMute()" alt="Mute Button">
+	</div>
+</body>
+
+</html>
